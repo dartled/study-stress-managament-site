@@ -1,6 +1,9 @@
 # Identifying and Defining
 
 **Divergent Thinking**  
+
+![alt text](image.png)
+
 **Convergent Thinking**
 
 | Idea Name | What it does | Influence it Explores | Who it helps |
@@ -27,7 +30,6 @@ Core Features and Mechanics:
 - Study Stress Management Strategies Library:  
 - Provides categorised resources such as breathing exercises, time management tips, and motivational content, articles how to reduce study stress
 
-Users can export their data (e.g., download stress logs as a PDF for self-reflection or counseling support).
 
 # 
 

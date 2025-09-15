@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/* background-image: url() to add image within body*/
+/* https://www.youtube.com/watch?v=U8smiWQ8Seg */
+
+/* nav bar & shadow*/
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+
+    display: flex; /* makes logo/heading same row as navbar */
+    align-items: center;
+}
+
+/* push logo/heading */
+nav h1 {
+    margin-right: auto;
+}
+
+/* nav bar headings, change later to match prototype */
+nav ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* this is what keeps nav bar elements in the middle */
+    align-items: center;
+    margin: 0 auto;
+}
+
+nav li{
+    height: 50px;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+/* hover effect*/
+nav a:hover{
+    background-color: #f0f0f0; 
+}
+

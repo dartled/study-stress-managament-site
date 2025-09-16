@@ -54,3 +54,35 @@ nav a:hover{
     background-color: #f0f0f0; 
 }
 
+/* main section*/
+.main{
+    background-color: white;
+}
+
+.main_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    margin: 0 auto;
+    height: 90vh;
+    background-color: white;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+
+}
+
+/*https://www.youtube.com/watch?v=FazgJVnrVuI */
+.main_content h1{
+    font-size: 4rem;
+    background-color:lightblue;
+    background-image: linear-gradient(to top, lightblue 0%,darkblue 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+
+}

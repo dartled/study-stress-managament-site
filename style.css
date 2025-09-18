@@ -277,7 +277,7 @@ nav a:hover{
 }
 
 /* why use this header */ 
-.why_us {
+.why_use {
     background: white;
     display: flex;
     flex-direction: column;
@@ -285,7 +285,9 @@ nav a:hover{
     height: 100vh;
 }
 
-.why_us h2 {
+
+
+.why_use h2 {
     font-size: 4rem;
     background-color:black;
     background-size: 100%;
@@ -295,10 +297,37 @@ nav a:hover{
     -moz-text-fill-color: transparent;
 }
 
-.why_us p {
+.why_use p {
     margin-top: 1rem;
     font-size: 2.5rem;
     font-weight:400;
     word-spacing: 0;
     line-height: 70px;
 }
+
+
+
+.why_use_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+
+
+    margin: 0 auto;
+    height: 90vh;
+    background-color: white;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 50px;
+    margin-top: 120px;
+    margin-left: 45px; /* side margins*/
+    margin-right: 45px;
+}
+
+.graph_image_container {
+    width: 50px;
+    height: auto;
+    position: relative;
+} 

@@ -158,7 +158,7 @@ nav a:hover{
 
 /* tools section */
 .tools {
-    background: lightgrey;
+    background: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -179,6 +179,7 @@ nav a:hover{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 4rem;
 }
 
 .tools_card button{
@@ -263,6 +264,7 @@ nav a:hover{
     margin-top: 1rem;
     margin-bottom: 15px;
     font-weight: 0;
+    
 }
 
 /* card alignment and spacing */ 
@@ -271,9 +273,32 @@ nav a:hover{
     justify-content: center;
     align-items: stretch; 
     flex-wrap: nowrap; 
-    gap: 40px; 
-
+    gap: 80px; 
 }
 
+/* why use this header */ 
+.why_us {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
 
+.why_us h2 {
+    font-size: 4rem;
+    background-color:black;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
 
+.why_us p {
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    font-weight:400;
+    word-spacing: 0;
+    line-height: 70px;
+}

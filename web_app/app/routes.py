@@ -8,24 +8,12 @@ from app.models import User
 from urllib.parse import urlsplit
 from datetime import datetime, timezone
 
-@app.route('/')
-@app.route('/index')
-@login_required
 
 
+# study planner homepage
+@app.route("/")
 def index():
-    user = {'username': 'testing'}
-    posts = [
-        {
-            'author': {'username': 'test1'},
-            'body': '6767676767'
-        },
-        {
-            'author': {'username': 'test2'},
-            'body': 'hiiiiiiiii'
-        }
-    ]
-    return render_template('index.html', title='Home', posts=posts)
+    return render_template("index.html")
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pomodoro Timer</title>
         <link rel="stylesheet" href="/static/pomodoro.css">
+        <link rel="stylesheet" href="/static/style.css">
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,15 @@
         <script src="https://kit.fontawesome.com/6f3103b13c.js" cross origin="anonymous"> </script>
     </head>
 <body>
+    <nav class = "navbar">
+        <h2>studyZen</h2> <!-- replace with icon later -->
+        <ul>
+            <li><a href= "/">Home</a></li>
+            <li><a href= "/#tools">Tools</a></li>
+            <li><a href= "/#about">About</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+     </nav>   
     
     <section>
         <div class= "container">

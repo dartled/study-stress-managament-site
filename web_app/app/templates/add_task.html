@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StudyZen</title>
-        <link rel="stylesheet" href="#"">
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="stylesheet" href="/static/study_planner.css">
+                  
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +14,30 @@
     </head>
 
 <body>
-    <h1> Add New Task</h1>
+    
+    <div>
+    <nav class = "navbar">
+        <h2>studyZen</h2> 
+        <ul>
+            <li><a href= "/">Home</a></li>
+            <li><a href= "/#tools">Tools</a></li>
+             <li><a href= "/#about">About</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+         </ul>
+     </nav> 
+     </div>
+
+    <h3>Add Task</h3>
+ 
     <form method="POST">
         <label> Subject </label> <br>
-        <input type="text" name="subject" required> <br><br>
+        <input type="text" name="subject" required> <br><br> <!--subject can not be empty-->
         <label> Description:</label> <br>
         <textarea name="description"></textarea> <br><br>
         <label> Due Date:</label> <br>
         <input type="date" name="due_date"> <br><br>
         <button type="submit"> Save Task </button>
     </form>
+ 
 </body>
 </html>

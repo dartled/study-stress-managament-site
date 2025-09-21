@@ -17,9 +17,8 @@
     <nav class = "navbar">
         <h2>studyZen</h2> <!-- replace with icon later -->
         <ul>
-            <li><a href= "#">Home</a></li>
-            <li><a href= "#">Tools</a></li>
-            <li><a href= "#">Forum</a></li>
+            <li><a href= "#tools">Tools</a></li>
+            <li><a href= "#about">About</a></li>
             <li><a href="{{ url_for('login') }}">Login/Register</a></li>
         </ul>
     </nav>
@@ -34,12 +33,10 @@
 
                 <div class = "main_btns"> 
                     <button class="get_started">
-                    <a href= "#"> Get Started</a>
+                    <a href="{{ url_for('register') }}"> Get Started</a>
                     </button>
 
-                    <button class ="learn_more">
-                    <a href= "#"> Learn More</a>
-                    </button>
+                  
                 </div>
             
             </div>
@@ -54,7 +51,7 @@
     </div>
 
     <div class = "tools">
-        <h2> view our tools </h2>
+        <h2 id="tools"> view our tools </h2>
         <div class = "tools_container">
             <div class = "tools_card">
 
@@ -64,23 +61,17 @@
                     <button><a href="{{ url_for('pomodoro_timer') }}"> View </a></button> <!-- add images to button later-->
                 </div>
 
-                <div class = "card_1"> 
+                <div class = "card_2"> 
                     <h3> Study Planner</h3>
                     <p> Organise assignments and plan your studies </p>
                     <button> <a href ="{{url_for('study_planner') }}"> View </a> </button>
-                </div>
-
-                <div class = "card_1"> 
-                    <h3> Forums</h3>
-                    <p> Interact with other students and seek advice </p>
-                    <button> View </button>
                 </div>
             </div>
         </div>
     </div>
 
     <div class = "why_use">
-        <h2> why use this? </h2>
+        <h2 id="about"> why use this? </h2> <!--to be used to the navigation button About-->
         <div class = "why_use_container">
             
             <div class = "graph_image_container">

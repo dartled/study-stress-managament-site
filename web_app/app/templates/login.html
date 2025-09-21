@@ -1,4 +1,7 @@
-(#{% extends "base.html" %})
+{% extends "base.html" %}
+
+{% block content %}
+<!--Login Page-->
 <div class="wrapper">
     <div class="form-header">
         <div class="titles">
@@ -6,8 +9,8 @@
         </div>
     </div>
 
-{% block content %}
-    <h1>Sign In</h1>
+
+    <h1>Login Page</h1>
 
     <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
@@ -15,7 +18,7 @@
             {{ form.username.label }}<br>
             {{ form.username(size=32) }}<br>
             {% for error in form.username.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <span style="color: red;">[{{ error }}]<!-Loging error--></span>
             {% endfor %}
         </div>
         
@@ -38,5 +41,5 @@
         <div class="register"> 
             Don't have an account? <a href="{{ url_for('register') }}">Click to Register!</a></p>
         </div>
-        
+    </div>    
 {% endblock %}

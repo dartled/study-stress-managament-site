@@ -4,7 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>StudyZen</title>
-        <link rel="stylesheet" href="#"">
+        <link rel="stylesheet" href="/static/style.css">
+         <link rel="stylesheet" href="/static/study_planner.css">
+        
         <!-- FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,32 +14,51 @@
     </head>
 
 <body>
-    <h1> Study Planner </h1>
+      <nav class = "navbar">
+        <h2>studyZen</h2> <!-- replace with icon later -->
+        <ul>
+            <li><a href= "/">Home</a></li>
+            <li><a href= "/#tools">Tools</a></li>
+             <li><a href= "/#about">About</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+         </ul>
+     </nav>   
 
-    <nav>
-        <a href="{{url_for('add_task')}}">Add Task</a>
-    </nav>
+     <div class="add_task_navigation">
+        <button class ="add_task">
+            <a href="{{url_for('add_task')}}">Add Task</a>
+        </button>
+      </div>  
+
     {% if tasks%}
+    <div class="task_container">
 
     <ul>
         {%for task in tasks %}
-        <li> 
-            {{task.subject}} | {{task.description}} |
-            Due: {{task.due_date}}
+            <div class="task_card"  
+                {% if not task.completed %}Completed{% endif %}>
+                 <h3> {{task.subject}} </h3>
+                <p>{{task.description}} </p>
+                <p>Due: {{task.due_date}}</p>
             
-            (# check if task is completed or not, if not completed provide mark completed button #)
-            {% if not task.completed %}
-                <a href="{{url_for('complete_task', task_id=task.id)}}"> Mark as Completed </a> 
-            {% else %}
-                 <p> Completed </p>
-            {% endif %}
+                <div class="task_buttons">
+                    {% if not task.completed %}
+                        <a href="{{url_for('complete_task', task_id=task.id)}}" class="btn"> 
+                            <img src="/static/images/check.png" class="icon">Mark as Completed 
+                        </a> 
+                    {% else %}
+                        <span class="completed_label"> <p> Completed </p></span>
+                
+                    {% endif %}
             
-            {# delete #}
-            <a href="{{url_for('delete_task', task_id=task.id)}}"> Delete</a>
-        </li>
+                {# delete #}
+                    <a href="{{url_for('delete_task', task_id=task.id)}}" class="btn_delete"> <img src="/static/images/delete.png" class="icon">Delete</a>
+                </div>
+            </div>
+            <br><br>    
         {% endfor %}        
     </ul>
-
+    </div>
     {% else %}
     <p> Please set a task </p>
     {% endif %}

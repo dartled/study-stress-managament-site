@@ -2,11 +2,12 @@ from datetime import datetime, timezone
 from typing import Optional
 import sqlalchemy as sa
 import sqlalchemy.orm as so
-from app import db
+from app import db,app   #added app
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from app import login
 from hashlib import md5
+
 
 class User(UserMixin, db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
@@ -49,7 +50,20 @@ class Post(db.Model):
 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+
+#Codes for Study Planner
+# database model for school task
+class Task(db.Model):
+    id = db.Column(db.Integer, primary_key=True) # unique id
+    subject = db.Column(db.String(100), nullable=False) # school subject
+    description = db.Column(db.String(200)) # task description
+    due_date = db.Column(db.String(20)) # due date
+    completed = db.Column(db.Boolean, default=False) # completed? y/n
     
+#create  the table    
+with app.app_context():
+    db.create_all()
+
 @login.user_loader
 def load_user(id):
     return db.session.get(User, int(id))

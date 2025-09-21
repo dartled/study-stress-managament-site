@@ -20,7 +20,7 @@
             <li><a href= "#">Home</a></li>
             <li><a href= "#">Tools</a></li>
             <li><a href= "#">Forum</a></li>
-            <li><a href= "login_stuff\studyzen.py">Login/Register</a></li>
+            <li><a href="{{ url_for('login') }}">Login/Register</a></li>
         </ul>
     </nav>
     
@@ -61,13 +61,13 @@
                 <div class = "card_1"> 
                     <h3> Pomodoro Timer</h3>
                     <p> Stay focused with timed sessions and breaks </p>
-                    <button><a href="pomodoro_timer.html"> View </a></button> <!-- add images to button later-->
+                    <button><a href="{{ url_for('pomodoro_timer') }}"> View </a></button> <!-- add images to button later-->
                 </div>
 
                 <div class = "card_2"> 
                     <h3> Study Planner</h3>
                     <p> Organise assignments and plan your studies </p>
-                    <button> View </button>
+                    <button> <a href ="{{url_for('study_planner') }}"> View </a> </button>
                 </div>
 
                 <div class = "card_3"> 

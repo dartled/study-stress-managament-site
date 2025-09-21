@@ -7,6 +7,7 @@ from app import db
 from app.models import User
 from urllib.parse import urlsplit
 from datetime import datetime, timezone
+from app.models import Task  # Added for Study Planner
 
 
 
@@ -17,8 +18,6 @@ def index():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if current_user.is_authenticated:
-        return redirect(url_for('index'))
     form = LoginForm()
     if form.validate_on_submit():
         user = db.session.scalar(
@@ -32,6 +31,10 @@ def login():
             next_page = url_for('index')
         return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
+
+@app.route("/pomodoro_timer")
+def pomodoro_timer():
+    return render_template("pomodoro_timer.html")
 
 @app.route('/logout')
 def logout():
@@ -81,5 +84,37 @@ def edit_profile():
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
-    return render_template('edit_profile.html', title='Edit Profile',
-                           form=form)
+    return render_template('edit_profile.html', title='Edit Profile',form=form)
+
+
+    
+@app.route('/study_planner')
+def study_planner():
+    tasks = Task.query.order_by(Task.due_date).all() # query/get data from database sorted by due date
+    return render_template('study_planner.html', tasks=tasks) # call study planner
+
+@app.route('/add_task', methods=['GET', 'POST'])
+def add_task():
+    if request.method == 'POST':
+        subject = request.form['subject']
+        description = request.form['description']
+        due_date = request.form['due_date']
+        new_task = Task(subject=subject, description=description, due_date=due_date)
+        db.session.add(new_task)
+        db.session.commit()
+        return redirect(url_for('study_planner'))
+    return render_template('add_task.html')
+
+@app.route('/complete/<int:task_id>')
+def complete_task(task_id):
+    task = Task.query.get(task_id)
+    task.completed = True
+    db.session.commit()
+    return redirect(url_for('study_planner'))
+
+@app.route('/delete_task/<int:task_id>')
+def delete_task(task_id):
+    task = Task.query.get(task_id)
+    db.session.delete(task)
+    db.session.commit()
+    return redirect(url_for('study_planner'))

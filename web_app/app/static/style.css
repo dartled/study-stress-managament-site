@@ -15,7 +15,7 @@ body{
 
 /* nav bar & shadow*/
 nav{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 
     display: flex; /* makes logo/heading same row as navbar */
@@ -25,6 +25,7 @@ nav{
 /* push logo/heading */
 nav h1 {
     margin-right: auto;
+    
 }
 
 /* nav bar headings, change later to match prototype */
